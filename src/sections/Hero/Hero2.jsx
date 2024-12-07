@@ -6,7 +6,7 @@ const Hero2 = () => {
           {/* Image Tablet */}
           <div className="relative w-11/12 max-w-4xl my-10">
               <img
-                  src="/src/assets/tablet.png" // Pastikan path benar
+                  src="/public/tablet.png" // Pastikan path benar
                   alt="Tablet Frame showcasing content"
                   className="w-full h-full rounded-3xl shadow-lg object-cover"
               />
