@@ -2,17 +2,16 @@
 
 const Hero2 = () => {
   return (
-    <div>
+      <div className="flex flex-col items-center pt-28 justify-center px-7  h-full">
           {/* Image Tablet */}
-          <div className="relative w-[90%] max-w-[1024px] h-auto m-16">
+          <div className="relative w-11/12 max-w-4xl my-10">
               <img
-                  src="/src/assets/tablet.png"
-                  alt="Tablet Frame"
-                  className="w-full h-auto"
+                  src="/src/assets/tablet.png" // Pastikan path benar
+                  alt="Tablet Frame showcasing content"
+                  className="w-full h-full rounded-3xl shadow-lg object-cover"
               />
-
           </div>
-    </div>
+      </div>
   )
 }
 

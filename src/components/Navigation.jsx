@@ -5,16 +5,18 @@
 const Navigation = () => {
   return (
     <>
-      <div className="h-24  flex justify-between items-center px-10">
-        <div className="flex-none">Logo</div>
+      <header className="flex items-center justify-between p-4 md:p-6 top-0 z-10 bg-white fixed w-full">
+        <div className="flex-none">
+          <h1>Kasir Bali</h1>
+        </div>
         <div className="flex gap-28 grow justify-center items-center">
           <a >Home</a>
-          <a>Features</a>
-          <a>How It Works </a>
-          <a>Pricing</a>
+          <a>Product</a>
+          <a>Layanan</a>
+          <a>Tentang Kami</a>
         </div>
-        <div className="flex-none text-black bg-yellow-400 py-2 px-6 rounded-md">Try to free</div>
-      </div>
+        <div className="flex-none text-white bg-blue-800 py-2 px-6 rounded-md">Try to free</div>
+      </header>
     </>
   )
 }
