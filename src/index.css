@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.no-horizontal-scrollbar {
+  overflow-x: hidden; /* Sembunyikan scrollbar horizontal */
+}

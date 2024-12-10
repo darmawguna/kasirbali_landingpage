@@ -1,21 +1,52 @@
-
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import Slide1 from './slides/Slide1';
+import Slide2 from './slides/Slide2';
 
 const Hero = () => {
+    const slides = [<Slide1 key="slide1" />, <Slide2 key="slide2" />];
+    const [currentSlide, setCurrentSlide] = useState(0);
+
+    const handleNext = () => {
+        setCurrentSlide((prev) => (prev + 1) % slides.length);
+    };
+
+    const handlePrev = () => {
+        setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+    };
+
     return (
-        <div className="text-center flex flex-col justify-center items-center px-7 h-full mt-60">
-            <div>
-                <h1 className="text-7xl mt-24 font-bold">Kelola Bisnis Anda dengan KasirBali  <br />
-                    Solusi Kasir Tanpa Ribet
-                </h1>
-                <p className="mt-8 text-lg text-gray-600">Tingkatkan efisiensi dan kelola bisnis Anda   dengan lebih mudah bersama Kasir Bali! 
-                </p>
+        <div className="relative h-screen no-horizontal-scrollbar">
+
+            <motion.div
+                key={currentSlide}
+                className="w-full h-3/4 flex items-center justify-center"
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -100 }}
+                transition={{ duration: 0.5 }}
+            >
+                <div className="text-center flex flex-col justify-center items-center w-full px-7 h-full">
+                    {slides[currentSlide]}
+                </div>
+            </motion.div>
+            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 w-full px-8">
+                <div className="flex flex-row gap-4 justify-between w-full px-28">
+                    <button onClick={handlePrev} className=" text-white text-3xl w-10 h-10 bg-blue-400 rounded-full flex  justify-center">
+                        &larr;
+                    </button>
+                    <button onClick={handleNext} className=" text-white text-3xl w-10 h-10 bg-blue-400 rounded-full flex  justify-center">
+                        &rarr;
+                    </button>
+                </div>
             </div>
-            <div className="flex gap-4 mt-8">
-                <button className="py-2 px-4 text-white bg-blue-800 rounded-md font-semibold">Get Started</button>
-                <button className="py-2 px-4 text-white bg-blue-800 rounded-md font-semibold">Watch Video</button>
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
+                {slides.map((_, index) => (
+                    <div key={index} className={`w-2 h-2 rounded-full ${ index === currentSlide ? 'bg-blue-400' : 'bg-gray-500' }`}></div>
+                ))}
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Hero
+export default Hero;

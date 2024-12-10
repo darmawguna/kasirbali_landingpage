@@ -1,5 +1,8 @@
+import { useState } from 'react';
 
 const FeatureList = () => {
+    const [activeIndex, setActiveIndex] = useState(0);
+
     const features = [
         {
             id: '01',
@@ -13,12 +16,12 @@ const FeatureList = () => {
     ];
 
     return (
-        <div className="max-w-full mx-auto mt-10 space-y-4 items-center ">
+        <div className="max-w-full mx-auto mt-10 space-y-4 items-center">
             {features.map((feature, index) => (
                 <div
                     key={index}
-                    className={`flex items-center p-4 rounded-lg  ${ index === 0 ? 'bg-blue-100' : 'bg-white'
-                        }`}
+                    onClick={() => setActiveIndex(index)}
+                    className={`flex items-center p-4 rounded-lg cursor-pointer ${ activeIndex === index ? 'bg-blue-100' : 'bg-white' }`}
                 >
                     <div className="flex items-center justify-center text-white w-12 h-12 bg-blue-800 rounded-full">
                         <span className="text-lg font-bold">{feature.id}</span>
