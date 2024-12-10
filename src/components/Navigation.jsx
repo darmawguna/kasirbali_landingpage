@@ -29,7 +29,7 @@ const Navigation = () => {
     <>
       <header className="flex items-center justify-between p-4 md:p-6 top-0 z-10 bg-white fixed w-full">
         <div className="flex-none">
-          <img src="/public/logo.jpg" className="w-16 h-16" alt="" />
+          <img src="/logo.jpg" className="w-16 h-16" alt="" />
         </div>
         <div className="flex gap-28 grow justify-center items-center">
           <a href="#home" className={`${ activeSection === 'home' ? 'text-blue-800 font-bold border-b-2 border-blue-800' : '' }`}>Home</a>
