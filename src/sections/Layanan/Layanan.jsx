@@ -5,7 +5,7 @@ import WhyList from "./List"
 const Layanan = () => {
     return (
         <>
-            <div className="my-52">
+            <div id="service" className="my-52">
                 <div className="flex flex-col justify-center items-center px-7 gap-10">
                     <h1 className="text-4xl font-bold">Layanan Kami</h1>
                     <p className="text-lg text-gray-600">Temukan kekuatan Aplikasi POS canggih kami, KasirBali

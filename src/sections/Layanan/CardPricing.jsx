@@ -1,10 +1,10 @@
+import { useState } from 'react';
 
-
-const PricingCard = ({ title, price, features, buttonText, highlight }) => {
+const PricingCard = ({ title, price, features, buttonText, isHovered, nonFeatures }) => {
     return (
-        <div className={`p-6 rounded-lg shadow-lg ${ highlight ? 'bg-blue-100' : 'bg-white' }`}>
+        <div className={`p-6 rounded-lg shadow-lg ${ isHovered ? 'bg-blue-100' : 'bg-white' }`}>
             <div className="mb-4">
-                <span className={`inline-block px-3 py-1 text-sm font-semibold rounded-full ${ highlight ? 'bg-blue-800 text-white' : 'bg-gray-200 text-gray-800' }`}>
+                <span className={`inline-block px-3 py-1 text-sm font-semibold rounded-full ${ isHovered ? 'bg-blue-800 text-white' : 'bg-gray-200 text-gray-800' }`}>
                     {title}
                 </span>
             </div>
@@ -19,7 +19,18 @@ const PricingCard = ({ title, price, features, buttonText, highlight }) => {
                     </li>
                 ))}
             </ul>
-            <button className={`w-full py-2 font-semibold rounded-lg ${ highlight ? 'bg-blue-800 text-white' : 'bg-gray-200 text-gray-800' }`}>
+            {nonFeatures && <ul className="mb-2 space-y-2">
+                {nonFeatures.map((nonFeature, index) => (
+                    <li key={index} className="flex items-center">
+                        <span className="mr-2 text-red-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+                        </svg>
+                        </span>
+                        <span>{nonFeature}</span>
+                    </li>
+                ))}
+            </ul>}
+            <button className={`w-full py-2 font-semibold rounded-lg ${ isHovered ? 'bg-blue-800 text-white' : 'bg-gray-200 text-gray-800' }`}>
                 {buttonText}
             </button>
         </div>
@@ -27,6 +38,8 @@ const PricingCard = ({ title, price, features, buttonText, highlight }) => {
 };
 
 const PricingSection = () => {
+    const [hoveredIndex, setHoveredIndex] = useState(null);
+
     const plans = [
         {
             title: 'Free Member',
@@ -37,6 +50,11 @@ const PricingSection = () => {
                 'Kasir',
                 'Laporan Transaksi',
                 'Bluetooth Printout Bukti Transaksi',
+            ],
+            nonFeatures: [
+                'Multi Devices',
+                'Sync Mode',
+                'Web Online Fitur'
             ],
             buttonText: 'Get started',
         },
@@ -56,13 +74,18 @@ const PricingSection = () => {
             buttonText: 'Get started',
             highlight: true,
         },
-
     ];
 
     return (
         <div className="flex justify-center space-x-6">
             {plans.map((plan, index) => (
-                <PricingCard key={index} {...plan} />
+                <div
+                    key={index}
+                    onMouseEnter={() => setHoveredIndex(index)}
+                    onMouseLeave={() => setHoveredIndex(null)}
+                >
+                    <PricingCard {...plan} isHovered={hoveredIndex === index} />
+                </div>
             ))}
         </div>
     );
