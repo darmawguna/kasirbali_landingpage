@@ -5,28 +5,28 @@ const WhyList = () => {
     const features = [
         {
             id: '01',
-            image: '/public/icons/cog.svg',
+            image: '/icons/cog.svg',
             title: 'Manajemen Produk, Diskon, dan Transaksi',
             description: 'Kelola produk, penerapan diskon, dan pencatatan transaksi dengan sistem yang terstruktur dan intuitif.',
         },
         {
             id: '02',
-            image: '/public/icons/cloud.svg',
+            image: '/icons/cloud.svg',
             title: 'Laporan Komprehensif', description: "Pantau performa bisnis Anda melalui laporan transaksi harian, mingguan, hingga bulanan yang disajikan secara rinci."
         },
         {
             id: '03',
-            image: '/public/icons/signal.svg',
+            image: '/icons/signal.svg',
             title: 'Fitur Offline', description: "Beroperasi tanpa internet dengan aplikasi mobile yang menyimpan data transaksi secara lokal."
         },
         {
             id: '04',
-            image: '/public/icons/market.svg',
+            image: '/icons/market.svg',
             title: 'Layanan Online Multi-Perangkat', description: "Akses aplikasi melalui perangkat mobile maupun web, dengan sinkronisasi data yang mulus antar perangkat."
         },
         {
             id: '05',
-            image: '/public/icons/free.svg',
+            image: '/icons/free.svg',
             title: 'Gratis Tanpa Batasan Transaksi', description: "Nikmati semua fitur aplikasi tanpa batasan jumlah transaksi, mendukung UMKM untuk berkembang tanpa tambahan biaya."
         },
     ];
