@@ -9,23 +9,23 @@ const FiturSection = () => {
             id: '01',
             title: 'Manajemen Produk, Diskon, dan Transaksi',
             description: 'Kelola produk, penerapan diskon, dan pencatatan transaksi dengan sistem yang terstruktur dan intuitif.',
-            image: "/public/ManajemenProduk.png"
+            image: "/public/mockups/ManajemenProduk.png"
         },
         {
             id: '02', title: 'Laporan Komprehensif', description: "Pantau performa bisnis Anda melalui laporan transaksi harian, mingguan, hingga bulanan yang disajikan secara rinci.",
-            image: "/public/Laporan.png"
+            image: "/public/mockups/Laporan.png"
         },
         {
             id: '03', title: 'Fitur Offline', description: "Beroperasi tanpa internet dengan aplikasi mobile yang menyimpan data transaksi secara lokal.",
-            image: "/public/Offline.png"
+            image: "/public/mockups/Offline.png"
         },
         {
             id: '04', title: 'Layanan Online Multi-Perangkat', description: "Akses aplikasi melalui perangkat mobile maupun web, dengan sinkronisasi data yang mulus antar perangkat.",
-            image: "/public/LayananOnline.png"
+            image: "/public/mockups/LayananOnline.png"
         },
         {
             id: '05', title: 'Gratis Tanpa Batasan Transaksi', description: "Nikmati semua fitur aplikasi tanpa batasan jumlah transaksi, mendukung UMKM untuk berkembang tanpa tambahan biaya.",
-            image: "/public/tablethome.png"
+            image: "/public/mockups/tablethome.png"
         },
     ];
 
