@@ -6,7 +6,7 @@ const Slide1 = () => {
             <div >
                 <h1 className="text-7xl mt-24 font-bold">
                     Kelola Bisnis Anda dengan KasirBali <br />
-                    Solusi Kasir Tanpa Ribet
+                    Solusi Kasir Tanpa Ribet!
                 </h1>
                 <p className="mt-8 text-lg text-gray-600">
                     Tingkatkan efisiensi dan kelola bisnis Anda dengan lebih mudah bersama Kasir Bali!
