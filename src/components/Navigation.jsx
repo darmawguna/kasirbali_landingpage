@@ -27,7 +27,7 @@ const Navigation = () => {
 
   return (
     <>
-      <header className="flex items-center justify-between p-4 md:p-6 top-0 z-10 bg-white fixed w-full">
+      <header className="flex items-center justify-between  md:px-6 md:py-4 top-0 z-10 bg-white fixed w-full">
         <div className="flex-none">
           <img src="/logo.jpg" className="w-16 h-16" alt="" />
         </div>
@@ -37,7 +37,7 @@ const Navigation = () => {
           <a href="#layanan" className={`${ activeSection === 'layanan' ? 'text-blue-800 font-bold border-b-2 border-blue-800' : '' }`}>Layanan</a>
           <a href="#tentang-kami" className={`${ activeSection === 'tentang-kami' ? 'text-blue-800 font-bold border-b-2 border-blue-800' : '' }`}>Tentang Kami</a>
         </div>
-        <div className="flex-none text-white bg-blue-800 py-2 px-6 rounded-md">Try to free</div>
+        <div className="flex-none text-white bg-blue-800 py-2 px-6 rounded-md">Coba Gratis</div>
       </header>
     </>
   );
