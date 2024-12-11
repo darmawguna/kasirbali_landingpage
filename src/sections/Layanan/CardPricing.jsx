@@ -9,7 +9,10 @@ const PricingCard = ({ title, price, features, buttonText, isHovered, nonFeature
                 </span>
             </div>
             <div className="mb-4">
-                <p className="text-4xl font-bold">RP{price}<span className="text-lg">/month</span></p>
+                <p className="text-4xl font-bold">
+                    RP{price}
+                    <span className="text-lg">/month</span>
+                </p>
             </div>
             <ul className="mb-6 space-y-2">
                 {features.map((feature, index) => (
@@ -19,18 +22,34 @@ const PricingCard = ({ title, price, features, buttonText, isHovered, nonFeature
                     </li>
                 ))}
             </ul>
-            {nonFeatures && <ul className="mb-2 space-y-2">
-                {nonFeatures.map((nonFeature, index) => (
-                    <li key={index} className="flex items-center">
-                        <span className="mr-2 text-red-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
-                        </svg>
-                        </span>
-                        <span>{nonFeature}</span>
-                    </li>
-                ))}
-            </ul>}
-            <button className={`w-full py-2 font-semibold rounded-lg ${ isHovered ? 'bg-blue-800 text-white' : 'bg-gray-200 text-gray-800' }`}>
+            {nonFeatures && (
+                <ul className="mb-2 space-y-2">
+                    {nonFeatures.map((nonFeature, index) => (
+                        <li key={index} className="flex items-center">
+                            <span className="mr-2 text-red-500">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth={1.5}
+                                    stroke="currentColor"
+                                    className="size-6"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        d="M6 18 18 6M6 6l12 12"
+                                    />
+                                </svg>
+                            </span>
+                            <span>{nonFeature}</span>
+                        </li>
+                    ))}
+                </ul>
+            )}
+            <button
+                className={`w-full py-2 font-semibold rounded-lg ${ isHovered ? 'bg-blue-800 text-white' : 'bg-gray-200 text-gray-800' }`}
+            >
                 {buttonText}
             </button>
         </div>
@@ -51,11 +70,7 @@ const PricingSection = () => {
                 'Laporan Transaksi',
                 'Bluetooth Printout Bukti Transaksi',
             ],
-            nonFeatures: [
-                'Multi Devices',
-                'Sync Mode',
-                'Web Online Fitur'
-            ],
+            nonFeatures: ['Multi Devices', 'Sync Mode', 'Web Online Fitur'],
             buttonText: 'Get started',
         },
         {
@@ -69,7 +84,7 @@ const PricingSection = () => {
                 'Bluetooth Printout Bukti Transaksi',
                 'Multi Devices',
                 'Sync Mode',
-                'Web Online Fitur'
+                'Web Online Fitur',
             ],
             buttonText: 'Get started',
             highlight: true,
@@ -77,12 +92,13 @@ const PricingSection = () => {
     ];
 
     return (
-        <div className="flex justify-center space-x-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 px-4 sm:px-8 lg:px-16">
             {plans.map((plan, index) => (
                 <div
                     key={index}
                     onMouseEnter={() => setHoveredIndex(index)}
                     onMouseLeave={() => setHoveredIndex(null)}
+                    className="transform hover:scale-105 transition duration-300 ease-in-out"
                 >
                     <PricingCard {...plan} isHovered={hoveredIndex === index} />
                 </div>
