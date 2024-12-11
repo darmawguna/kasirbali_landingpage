@@ -6,6 +6,7 @@ import HeroSection from "./sections/Hero/HeroSection";
 import FiturSection from "./sections/Produk/FiturSection";
 import Layanan from "./sections/Layanan/Layanan";
 import TentangKami from "./sections/Tentang_Kami/TentangKami";
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -18,8 +19,12 @@ function App() {
       <HeroSection />
 
       <FiturSection />
+
       <Layanan />
+
       <TentangKami />
+
+      <Footer />
     </div>
   );
 }

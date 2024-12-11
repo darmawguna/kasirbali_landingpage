@@ -10,7 +10,7 @@ const Navigation = () => {
 
       sections.forEach((section) => {
         const sectionTop = section.offsetTop;
-        if (window.scrollY >= sectionTop - 50) {
+        if (window.scrollY >= sectionTop - 70) {
           currentSection = section.getAttribute('id');
         }
       });
@@ -35,7 +35,7 @@ const Navigation = () => {
           <a href="#home" className={`${ activeSection === 'home' ? 'text-blue-800 font-bold border-b-2 border-blue-800' : '' }`}>Home</a>
           <a href="#product" className={`${ activeSection === 'product' ? 'text-blue-800 font-bold border-b-2 border-blue-800' : '' }`}>Product</a>
           <a href="#layanan" className={`${ activeSection === 'layanan' ? 'text-blue-800 font-bold border-b-2 border-blue-800' : '' }`}>Layanan</a>
-          <a href="#tentangkami" className={`${ activeSection === 'tentangkami' ? 'text-blue-800 font-bold border-b-2 border-blue-800' : '' }`}>Tentang Kami</a>
+          <a href="#tentang-kami" className={`${ activeSection === 'tentang-kami' ? 'text-blue-800 font-bold border-b-2 border-blue-800' : '' }`}>Tentang Kami</a>
         </div>
         <div className="flex-none text-white bg-blue-800 py-2 px-6 rounded-md">Try to free</div>
       </header>

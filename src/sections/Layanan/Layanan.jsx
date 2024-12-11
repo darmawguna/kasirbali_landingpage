@@ -5,7 +5,7 @@ import WhyList from "./List"
 const Layanan = () => {
     return (
         <>
-            <div id="layanan" className="my-52">
+            <section id="layanan" className="my-72">
                 <div className="flex flex-col justify-center items-center px-7 gap-10">
                     <h1 className="text-4xl font-bold">Layanan Kami</h1>
                     <p className="text-lg text-gray-600">Temukan kekuatan Aplikasi POS canggih kami, KasirBali
@@ -27,12 +27,11 @@ const Layanan = () => {
 
                         <div className="flex flex-col justify-center items-center gap-16">
                             <WhyList />
-
                         </div>
                     </div>
                 </div>
 
-            </div>
+            </section>
         </>
     )
 }

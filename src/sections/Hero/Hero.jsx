@@ -2,9 +2,11 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Slide1 from './slides/Slide1';
 import Slide2 from './slides/Slide2';
+import Slide3 from './slides/Slide3';
+
 
 const Hero = () => {
-    const slides = [<Slide1 key="slide1" />, <Slide2 key="slide2" />];
+    const slides = [<Slide1 key="slide1" />, <Slide2 key="slide2" />, <Slide3 key="slide3" />];
     const [currentSlide, setCurrentSlide] = useState(0);
 
     const handleNext = () => {
